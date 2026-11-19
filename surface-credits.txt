@@ -1,0 +1,12 @@
+ПЕНТИИ: оригинальный логотип и палитра из пользовательского проекта pentii-site.
+Onest: SIL Open Font License, см. brand/Onest-OFL.txt.
+Текстуры grass_ground, bark, oak_wood_planks перенесены из этого же проекта, источники Poly Haven, CC0. Исходная атрибуция в проекте сайта SCENE-SOURCES.txt.
+Модели людей, животных и окружения процедурно созданы для этого приложения.
+
+Панорама и карта освещения Meadow — Sergej Majboroda, Poly Haven, CC0 1.0. https://polyhaven.com/a/meadow
+Модель Executive Sedan — 3D Assets, CC0 1.0. https://3dassets.dev/assets/transport-collection-hd-executive-sedan-cfa7dfcf
+Фотопанорама неба Kloofendal 48d Partly Cloudy — Greg Zaal, Poly Haven, CC0 1.0. https://polyhaven.com/a/kloofendal_48d_partly_cloudy
+
+Справочники материалов (фактуры для эскиза создаются программно):
+Гибкая черепица ТЕХНОНИКОЛЬ SHINGLAS: https://www.tn.ru/catalogue/gibkaya-cherepitsa-shinglas/
+Рулонная черепица ТЕХНОНИКОЛЬ: https://www.tn.ru/catalogue/rulonnaya-cherepitsa/rulonnaja_cherepica_tehnonikol/

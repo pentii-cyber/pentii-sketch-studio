@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Краткая инструкция менеджера: создание дома, редактирование, сохранение эскиза и выпуск PDF в студии ПЕНТИИ.">
+  <title>Как работать — Студия эскизов ПЕНТИИ</title>
+  <style>
+    @font-face{font-family:Onest;src:url(Onest.ttf);font-display:swap}
+    :root{color-scheme:light;--ink:#152f44;--blue:#1267a8;--muted:#526c80;--line:#cddde8;--pale:#e3f3ff}
+    *{box-sizing:border-box}
+    body{margin:0;background:#f1f6fa;color:var(--ink);font:16px/1.6 Onest,Arial,sans-serif}
+    header{background:white;border-bottom:1px solid var(--line)}
+    .header-inner{max-width:1120px;margin:auto;min-height:82px;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:18px;font-weight:650;line-height:1.35}
+    .brand img{width:70px;height:48px;object-fit:contain}
+    .brand span{border-left:1px solid var(--line);padding-left:18px}
+    a{color:var(--blue)}
+    .open{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 20px;border-radius:9px;background:var(--blue);color:white;text-decoration:none;font-weight:650;white-space:nowrap}
+    .open:hover{background:#0c558e}
+    a:focus-visible{outline:3px solid #42a5e4;outline-offset:4px}
+    main{max-width:1120px;margin:auto;padding:38px 28px 30px}
+    .intro{max-width:800px;margin-bottom:28px}
+    .eyebrow{color:var(--blue);font-size:.875rem;font-weight:650;letter-spacing:.07em;text-transform:uppercase;margin:0 0 10px}
+    h1{font-size:clamp(1.8rem,3.5vw,2.65rem);line-height:1.15;letter-spacing:-.04em;margin:0 0 16px;font-weight:650}
+    .intro>p:last-child{color:var(--muted);margin:0}
+    .steps{display:grid;grid-template-columns:1fr 1fr;gap:16px;counter-reset:step}
+    .step{background:white;border:1px solid var(--line);border-radius:14px;padding:23px 24px;break-inside:avoid}
+    .step h2{display:flex;align-items:center;gap:12px;font-size:1.125rem;line-height:1.35;margin:0 0 14px;font-weight:650;letter-spacing:-.02em}
+    .step h2:before{counter-increment:step;content:counter(step);width:30px;height:30px;flex:none;display:grid;place-items:center;border-radius:8px;color:var(--blue);background:var(--pale);font-size:.875rem}
+    p{margin:0 0 12px}
+    p:last-child{margin-bottom:0}
+    strong{font-weight:650}
+    .storage{margin-top:20px;border-left:4px solid var(--blue);background:#e3f0fa;border-radius:0 10px 10px 0;padding:20px 24px;break-inside:avoid}
+    .storage h2{font-size:1.125rem;margin:0 0 8px;font-weight:650}
+    .footnotes{margin-top:20px;color:var(--muted);font-size:.875rem;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    footer{max-width:1120px;margin:auto;padding:0 28px 36px;color:var(--muted);font-size:.875rem}
+    @media(max-width:720px){.header-inner{padding:14px 18px;flex-wrap:wrap;gap:14px}.brand{font-size:.875rem;gap:12px}.brand span{padding-left:12px}.brand img{width:58px}.open{font-size:.875rem;min-height:44px;padding:9px 15px}main{padding:26px 18px 24px}.steps,.footnotes{grid-template-columns:1fr}.step{padding:20px}.footnotes{gap:12px}footer{padding:0 18px 28px}}
+    @media print{@page{margin:15mm}body{background:white;font-size:10pt;line-height:1.45}.header-inner,main,footer{max-width:none;padding:0}.header-inner{min-height:58px;margin-bottom:20px}header{border:0}.open{display:none}.intro{margin-bottom:16px}h1{font-size:23pt}.eyebrow{font-size:9pt}.steps{gap:10px}.step{padding:14px;border-radius:5px}.step h2{font-size:12pt;margin-bottom:9px}.step h2:before{width:22px;height:22px;font-size:9pt}.storage{padding:12px 16px;margin-top:14px}.storage h2{font-size:12pt}.footnotes,footer{font-size:9pt}.footnotes{margin:14px 0}footer{padding-top:8px}}
+  </style>
+</head>
+<body>
+  <header><div class="header-inner"><div class="brand"><img src="logo.svg" alt="ПЕНТИИ"><span>Студия эскизов<br>Инструкция менеджера</span></div><a class="open" href="./">Открыть студию</a></div></header>
+  <main>
+    <div class="intro"><p class="eyebrow">От идеи клиента к эскизу дома</p><h1>Начните с простого дома.<br>Доработайте его вместе с клиентом.</h1><p>Откройте ссылку в обычном браузере на компьютере. Установка не требуется. Для изменения модели удобнее пользоваться мышью.</p></div>
+    <div class="steps">
+      <section class="step"><h2>Создайте эскиз</h2><p>Первый дом — <strong>8 × 6 м с двускатной крышей</strong>. Включите «Редактирование» и нажмите карандаш рядом с названием, чтобы указать клиента или объект.</p><p>Для следующего клиента: <strong>«Мои эскизы» → «+ Дом»</strong>. Для другой версии того же дома — «Создать вариант текущего эскиза».</p></section>
+      <section class="step"><h2>Осмотритесь и измените размеры</h2><p>В «Осмотре» тяните мышью для поворота модели. Кнопки ракурсов показывают дом с нужной стороны.</p><p>В «Редактировании» выберите часть дома и тяните <strong>голубые маркеры</strong>. Точные значения доступны в панели. Ошибочное действие отменяется кнопкой ↶ или <strong>Ctrl+Z / Cmd+Z</strong>.</p></section>
+      <section class="step"><h2>Расставьте окна и перегородки</h2><p><strong>«Проёмы»:</strong> выберите окно или дверь и щёлкните по стене. Тяните край установленного проёма для изменения размера. Пунктир помогает выровнять соседние окна.</p><p><strong>«План»:</strong> протяните перегородку правой кнопкой мыши. За конец меняется длина, за середину — положение. Можно использовать «Карандаш перегородок».</p></section>
+      <section class="step"><h2>Настройте крышу и пристройки</h2><p><strong>«Крыша»:</strong> выберите форму и покрытие, затем двигайте маркеры. Кровля редактируется отдельно от стен. В режиме осмотра двойное нажатие на крышу открывает её редактирование.</p><p><strong>«Пристройки»:</strong> «Добавить пол со сваями» → сторона дома → «Поставить стены» → своя крыша. Размеры пристройки меняются прямо на модели.</p></section>
+      <section class="step"><h2>Подготовьте материалы клиенту</h2><p><strong>«Рендер дома»</strong> создаёт изображения с разных сторон. <strong>«Скачать PDF»</strong> готовит альбом: дождитесь завершения и нажмите кнопку скачивания в открывшемся окне.</p><p>В Safari можно выбрать «Открыть PDF» и сохранить его из просмотрщика. Перед отправкой проверьте название, размеры и сведения об окнах и дверях.</p></section>
+      <section class="step"><h2>Сохраните редактируемый файл</h2><p>В <strong>«Моих эскизах»</strong> нажмите <strong>«Скачать эскиз»</strong>. Сохраните файл в папку клиента: это резервная копия, которую можно продолжить редактировать.</p><p>Для переноса на другой компьютер откройте студию, выберите <strong>«Мои эскизы» → «Открыть эскиз»</strong> и укажите сохранённый файл. PDF предназначен для просмотра, а не для восстановления модели.</p></section>
+    </div>
+    <section class="storage"><h2>Где остаётся ваша работа</h2><p>Изменения автоматически сохраняются <strong>только в текущем браузере на этом устройстве</strong>. На другом компьютере они сами не появятся. Не очищайте данные сайта и не работайте в приватном режиме. После работы с клиентом скачивайте файл эскиза.</p></section>
+    <div class="footnotes"><p><strong>Нужен чистый старт?</strong> «Сбросить к дому 8 × 6» возвращает стандартный дом. Предыдущий эскиз остаётся в «Моих эскизах».</p><p><strong>Границы версии.</strong> Распознавание планировки по фото пока недоступно. Студия готовит эскиз для обсуждения; расчёты конструкций и рабочую документацию выполняет специалист.</p></div>
+  </main>
+  <footer>ПЕНТИИ · Студия эскизов для менеджера</footer>
+</body>
+</html>

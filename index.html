@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ПЕНТИИ — Студия эскизов</title><link rel="stylesheet" href="studio.css"></head><body data-mode="inspect">
+<header>
+  <div class="brand"><img src="logo.svg" alt="ПЕНТИИ"><i></i><span>Студия эскизов</span></div>
+  <div class="fileActions"><a id="managerGuide" href="guide.html" target="_blank" rel="noopener">Как работать</a><button id="importPlanButton" type="button">По планировке / фото</button><button id="projects">Мои эскизы</button><button class="primary" id="export">Скачать PDF</button></div>
+</header>
+<main>
+  <div class="projectBar">
+    <div class="projectInfo"><div class="titleLine"><h1 id="title"></h1><button id="rename" aria-label="Переименовать эскиз" title="Переименовать эскиз">✎</button></div><div id="stats"></div></div>
+    <button id="resetHouse" type="button" title="Вернуться к простому дому с двускатной крышей. Текущий эскиз останется в «Моих эскизах»."><span aria-hidden="true">↺</span> Сбросить к дому 8 × 6</button>
+    <div id="workspaceModes" role="group" aria-label="Режим работы">
+      <button type="button" data-mode="inspect" aria-pressed="true">Осмотр</button>
+      <button type="button" data-mode="edit" aria-pressed="false">Редактирование</button>
+    </div>
+  </div>
+  <p id="resetNotice" class="resetNotice" role="status" hidden></p>
+  <div class="workspace">
+    <section class="canvasPanel" aria-label="Рабочая область проекта">
+      <div class="sheet">
+        <div class="sheetHead">
+          <div class="sheetHeading"><strong id="sheetTitle"></strong><span id="cameraStatus">Главный фасад</span></div>
+          <div class="views" id="views"></div>
+          <div class="sheetActions">
+            <div id="sheetSelect"></div>
+            <button id="photoRender" type="button" title="Подготовить изображения всего дома">Рендер дома</button>
+            <button id="fullScene" type="button" aria-label="На весь экран" title="На весь экран"><span class="expandGlyph" aria-hidden="true"></span></button>
+          </div>
+        </div>
+        <div id="sectionChooser" class="sectionStrip" role="group" aria-labelledby="sectionPrompt" hidden>
+          <strong id="sectionPrompt">Что добавить?</strong>
+          <span id="sectionKinds">
+            <button type="button" data-section-kind="add">Секция крыши</button>
+            <button type="button" data-section-kind="canopy">Навес на опорах</button>
+          </span>
+          <button id="sectionAutoPlace" type="button" hidden>Разместить автоматически</button>
+          <button id="cancelSection" type="button">Отмена</button>
+        </div>
+        <div class="viewport" id="scene"></div>
+        <div id="sectionFeedback" class="sectionStrip" hidden>
+          <span id="sectionResult" role="status"></span><button type="button" id="undoSection">Отменить действие</button>
+        </div>
+      </div>
+      <div id="cameraAngles" class="cameraBar" role="group" aria-label="Вид 3D-модели">
+        <span class="cameraBarLabel">Ракурс</span>
+        <div class="cameraOptions">
+          <button data-camera="front" type="button" aria-pressed="true">Спереди</button>
+          <button data-camera="side" type="button" aria-pressed="false">Справа</button>
+          <button data-camera="rear" type="button" aria-pressed="false">Сзади</button>
+          <button data-camera="left" type="button" aria-pressed="false">Слева</button>
+          <button data-camera="corner" type="button" aria-pressed="false">Под углом</button>
+          <button data-camera="top" type="button" aria-pressed="false">Сверху</button>
+        </div>
+        <label class="yardVisibility" title="Показать деревья, ограждения и машины"><input type="checkbox" id="showYard" checked>Объекты участка</label>
+      </div>
+      <div class="under"><span id="hint"></span><button id="rotate" hidden>Повернуть</button></div>
+      <p id="notice" role="alert" hidden></p>
+    </section>
+    <aside aria-label="Редактирование дома">
+      <div class="inspectorHeading"><strong>Что изменить?</strong><div class="history"><button id="undo" aria-label="Отменить действие" title="Отменить (Ctrl+Z)">↶</button><button id="redo" aria-label="Вернуть действие" title="Вернуть (Ctrl+Shift+Z)">↷</button></div></div>
+      <nav id="tools" aria-label="Разделы редактора"></nav><div id="controls"></div>
+    </aside>
+  </div>
+</main>
+<footer><span id="status" role="status"></span></footer>
+<dialog id="pdfBox" aria-labelledby="pdfHeading">
+  <div class="dialogHead"><h2 id="pdfHeading">Эскизный проект</h2><button id="closePdf" type="button">Отменить</button></div>
+  <p id="pdfProgressText" role="status" aria-live="polite"></p>
+  <progress id="pdfProgress" max="100" value="0" aria-label="Подготовка эскизного проекта"></progress>
+  <p id="pdfSummary" class="muted">3D-виды, размерные планы, фасады, разрезы и ведомости.</p>
+  <div id="pdfActions" class="pdfActions" hidden><a id="savePdf" class="primary" download>Скачать PDF</a><a id="openPdf" target="_blank" rel="noopener">Открыть PDF</a></div>
+</dialog>
+<dialog id="library"><div class="dialogHead"><h2>Мои эскизы</h2><button id="close">Закрыть</button></div><div id="list"></div><button id="variant" class="wide">Создать вариант текущего эскиза</button><div class="row"><button id="new" class="primary">+ Дом</button><button id="newCanopy">+ Дом с навесом</button></div></dialog>
+<dialog id="titleBox"><form method="dialog"><h2>Название эскиза</h2><input id="nameInput" required maxlength="64" aria-label="Название эскиза"><div class="row"><button type="button" id="cancelName">Отмена</button><button class="primary">Сохранить</button></div></form></dialog>
+<dialog id="renderBox" aria-labelledby="renderHeading"><div class="renderHead"><h2 id="renderHeading">Рендер дома</h2><button id="closeRender" aria-label="Закрыть рендер">Закрыть</button></div><figure><img id="renderPreview" alt="Визуализация текущего эскиза"></figure><nav id="renderViews" aria-label="Готовые виды дома"></nav><div class="renderBottom"><span id="renderStatus" role="status"></span><a id="saveRender" class="primary" download hidden>Скачать этот вид</a></div></dialog>
+<script src="brand.js"></script><script src="drawing.js"></script><script src="three.js"></script><script src="volume-textures.js"></script><script src="environment-assets.js"></script><script src="yard.js"></script><script src="roof-sculpt.js"></script><script src="roofs.js"></script><script src="structure.js"></script><script src="extensions.js"></script><script src="terraces.js"></script><script src="rainwater.js"></script><script src="roof-finishes.js"></script><script src="architectural-film.js"></script><script src="align-guides.js"></script><script src="volume.js"></script><script src="interior.js"></script><script src="direct.js"></script><script src="terrace-example.js"></script><script src="studio.js"></script><script src="architectural-sheets.js"></script><script src="technical-references.js"></script><script src="structural-sheets.js"></script><script src="extension-sheets.js"></script><script src="export.js"></script><script src="render-dialog.js"></script><script src="project-transfer.js"></script><script src="import-model.js"></script><script src="plan-import.js"></script></body></html>
